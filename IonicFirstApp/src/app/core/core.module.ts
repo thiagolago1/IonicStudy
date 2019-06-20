@@ -4,9 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { RouteReuseStrategy } from '@angular/router';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
-  imports: [IonicModule.forRoot()], // forRoot significa que ele é chamado apenas uma única vez por aplicação
+  imports:
+  [
+    IonicModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+  ], // forRoot significa que ele é chamado apenas uma única vez por aplicação
   exports: [BrowserModule, IonicModule],
   providers: [
     StatusBar,
