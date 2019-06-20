@@ -9,11 +9,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
-  imports:
-  [
+  imports: [
     IonicModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment),
+    AngularFireAuthModule
   ], // forRoot significa que ele é chamado apenas uma única vez por aplicação
   exports: [BrowserModule, IonicModule],
   providers: [
